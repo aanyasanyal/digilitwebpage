@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Clubs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <style>
+        :root {
+            --primary-color: #003366; /* Dark blue */
+            --secondary-color: #ffcc00; /* Yellow */
+            --background-color: #f4f4f4; /* Light gray */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        #hero {
+            background: url no-repeat center center/cover;
+            color: #fff;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+            transition: background-color 0.3s ease;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .club-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .club {
+            width: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #e7f1ff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .club img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .club h3 {
+            margin-top: 10px;
+            color: var(--primary-color);
+        }
+
+        .club p {
+            color: #333;
+        }
+
+        .club:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .join-button {
+            background-color: #007bff; /* Blue */
+            color: white; /* White text */
+            padding: 10px 20px; /* Some padding */
+            border: none; /* Remove borders */
+            border-radius: 5px; /* Round edges */
+            cursor: pointer; /* Pointer/hand icon */
+            margin-top: 10px; /* Space above the button */
+        }
+
+        .join-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        #about img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        #contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #contact-form input, #contact-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        #contact-form button {
+            padding: 10px;
+            border: none;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact-form button:hover {
+            background-color: #0056b3;
+            transition: background-color 0.3s ease;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .social-icon {
+            color: var(--secondary-color);
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to FLAME Clubs</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Explore Our FLAME Clubs!</h2>
+        <p>Discover exciting opportunities to learn, engage, and grow through student communities.</p>
+        <a href="#clubs" class="cta-button">Explore Clubs</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Our Clubs</h2>
+        <p>Our university offers a wide range of student clubs covering interests from academics, arts, sports, and more. Whether you're passionate about volunteering, playing sports, or exploring the arts, there's a club for everyone!</p>
+        <img src="flame.png" alt="University Clubs">
+    </section>
+
+    <!-- Clubs Section -->
+    <section id="clubs">
+        <h2>Our Clubs</h2>
+        <div class="club-list">
+            <!-- Existing Clubs -->
+            <div class="club" data-aos="fade-up">
+                <img src="dance.png" alt="Dance Club">
+                <h3>Dance Club</h3>
+                <p>Express yourself through movement and rhythm in a variety of dance styles.</p>
+                <button class="join-button" onclick="joinClub('Dance Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="art.png" alt="Art Club">
+                <h3>Art Club</h3>
+                <p>Unleash your creativity with drawing, painting, and other artistic mediums.</p>
+                <button class="join-button" onclick="joinClub('Art Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="dog.png" alt="Animal Welfare Committee">
+                <h3>Animal Welfare Committee</h3>
+                <p>Promote the humane treatment of animals and engage in animal care activities.</p>
+                <button class="join-button" onclick="joinClub('Animal Welfare Committee')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="psych.png" alt="Psychology Club">
+                <h3>Psychology Club</h3>
+                <p>Explore human behavior and the mind through discussions and projects.</p>
+                <button class="join-button" onclick="joinClub('Psychology Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="astronomy.png" alt="Astronomy Club">
+                <h3>Astronomy Club</h3>
+                <p>Reach for the stars! Learn about the universe and participate in stargazing sessions.</p>
+                <button class="join-button" onclick="joinClub('Astronomy Club')">Join</button>
+            </div>
+            <!-- New Clubs -->
+            <div class="club" data-aos="fade-up">
+                <img src="debate.png" alt="Debate Club">
+                <h3>Debate Club</h3>
+                <p>Enhance your public speaking skills and engage in thought-provoking discussions.</p>
+                <button class="join-button" onclick="joinClub('Debate Club')">Join</button>
+            </div>
+        
+            <div class="club" data-aos="fade-up">
+                <img src="music.png" alt="Music Club">
+                <h3>Music Club</h3>
+                <p>Share your passion for music, whether you play an instrument or love to sing!</p>
+                <button class="join-button" onclick="joinClub('Music Club')">Join</button>
+            </div>
+    
+            <div class="club" data-aos="fade-up">
+                <img src="reading.png" alt="Reading Initiative Club">
+                <h3>Reading Initiative Club</h3>
+                <p>Foster a love for reading through book discussions and literacy programs.</p>
+                <button class="join-button" onclick="joinClub('Reading Initiative Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="theatre.png" alt="Theatre Club">
+                <h3>Theatre Club</h3>
+                <p>Showcase your acting talent and bring stories to life through performance arts.</p>
+                 <button class="join-button" onclick="joinClub('Theatre Club')">Join</button>
+            </div>
+             <div class="club" data-aos="fade-up">
+                <img src="slash.png" alt="Dotslash FLAME">
+                <h3>Dotslash FLAME</h3>
+                <p>Join us for tech meetups, workshops, and innovation challenges.</p>
+                 <button class="join-button" onclick="joinClub('Dotslash Club')">Join</button>
+            </div>
+           
+             <div class="club" data-aos="fade-up">
+                <img src="env.png" alt="Environment Club">
+                <h3>The Environment Club</h3>
+                <p>Participate in initiatives that promote environmental sustainability and awareness.</p>
+                 <button class="join-button" onclick="joinClub('Environment Club')">Join</button>
+            </div>
+             <div class="club" data-aos="fade-up">
+                <img src="socio.png" alt="Sociology Club">
+                <h3>The Sociology Club</h3>
+                <p>Dive deep into social structures, cultures, and human behavior through discussions and projects.</p>
+                 <button class="join-button" onclick="joinClub('Sociology Club')">Join</button>
+            </div>
+             <div class="club" data-aos="fade-up">
+                <img src="bb.png" alt="Basketball Club">
+                <h3>The Basketball Club</h3>
+                <p>Join a team of athletes who love the game and compete in university sports leagues.</p>
+                 <button class="join-button" onclick="joinClub('Basketball Club')">Join</button>
+            </div>
+             <div class="club" data-aos="fade-up">
+                <img src="cs.png" alt="Community Service Club">
+                <h3>The Community Service Club</h3>
+                <p>Engage in various social initiatives and help give back to the community.</p>
+                 <button class="join-button" onclick="joinClub('Community Service Club')">Join</button>
+            </div>
+             <div class="club" data-aos="fade-up">
+                <img src="it.png" alt="Itihaas Club">
+                <h3>The Itihaas Club</h3>
+                <p>Explore history and heritage through seminars, discussions, and field trips.</p>
+                  <button class="join-button" onclick="joinClub('Ithiaas Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="reading.png" alt="Reading Initiative Club">
+                <h3>The Reading Initiative Club</h3>
+                <p>Promote literacy and a love for reading through book discussions and campaigns.</p>
+                  <button class="join-button" onclick="joinClub('Reading Club')">Join</button>
+            </div>
+             <div class="club" data-aos="fade-up">
+                <img src="foot.png" alt="Football Club">
+                <h3>Football Club</h3>
+                <p>Join us to play and enjoy the beautiful game of football, participate in matches, and improve your skills.</p>
+                <button class="join-button" onclick="joinClub('Football Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="fris.png" alt="Frisbee Club">
+                <h3>Frisbee Club</h3>
+                <p>Experience the thrill of ultimate frisbee while making new friends and enjoying outdoor activities.</p>
+                <button class="join-button" onclick="joinClub('Frisbee Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="run.png" alt="Run Club">
+                <h3>Run Club</h3>
+                <p>Join fellow runners for training sessions, races, and a healthy lifestyle.</p>
+                <button class="join-button" onclick="joinClub('Run Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="music.png" alt="Music Club">
+                <h3>Music Club</h3>
+                <p>Share your passion for music, learn new instruments, and collaborate with fellow musicians.</p>
+                <button class="join-button" onclick="joinClub('Music Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+                <img src="photo.png" alt="Photography Club">
+                <h3>Photography Club</h3>
+                <p>Capture moments and explore your creativity through photography workshops and excursions.</p>
+                <button class="join-button" onclick="joinClub('Photography Club')">Join</button>
+            </div>
+            <div class="club" data-aos="fade-up">
+            <img src="fashion.png" alt="Fashion Club">
+            <h3>Fashion Club</h3>
+            <p>Explore the world of fashion through design, styling, and trend analysis.</p>
+             <button class="join-button" onclick="joinClub('Fashion Club')">Join</button>
+        </div>
+        <div class="club" data-aos="fade-up">
+            <img src="econ.png" alt="Econ Club">
+            <h3>Econonmics Club</h3>
+            <p>Dive into economic theories, current events, and policy discussions.</p>
+             <button class="join-button" onclick="joinClub('Economics Club')">Join</button>
+        </div>
+        <div class="club" data-aos="fade-up">
+            <img src="finance.png" alt="Finance and Investment Club">
+            <h3>Finance and Investment Club</h3>
+            <p>Learn about financial markets, investment strategies, and personal finance.</p>
+             <button class="join-button" onclick="joinClub('Finance Club')">Join</button>
+        </div>
+        <div class="club" data-aos="fade-up">
+            <img src="con.png" alt="Business and Consulting Club">
+            <h3>Business and Consulting Club</h3>
+            <p>Engage in business strategy discussions and real-world consulting projects.</p>
+             <button class="join-button" onclick="joinClub('Business & Consult Club')">Join</button>
+        </div>
+        <div class="club" data-aos="fade-up">
+            <img src="fit.png" alt="Fitness Club">
+            <h3>Fitness Club</h3>
+            <p>Promote health and wellness through group workouts, challenges, and events.</p>
+             <button class="join-button" onclick="joinClub('Fitness Club')">Join</button>
+        </div>
+        <div class="club" data-aos="fade-up">
+            <img src="mun.png" alt="MUN Club">
+            <h3>MUN Club</h3>
+            <p>Participate in Model United Nations conferences and develop diplomatic skills.</p>
+             <button class="join-button" onclick="joinClub('MUN Club')">Join</button>
+        </div>
+       
+            <div class="club" data-aos="fade-up">
+                <img src="comedy.png" alt="Comedy Club">
+                <h3>Comedy Club</h3>
+                <p>Bring laughter and joy through comedy shows and improv performances.</p>
+                <button class="join-button" onclick="joinClub('Comedy Club')">Join</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Students Say</h2>
+        <p>"Joining MUN club has made my experience unforgettable!" - Ram J</p>
+        <p>"I've met so many amazing people and learned new skills through the dance club." - Mehak L</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="Get to know more">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message/Question" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FLAME Clubs | All rights reserved.</p>
+        <div>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function joinClub(clubName) {
+            alert(`You have joined the ${clubName}! Welcome to the community!`);
+        }
+    </script>
+</body>
+</html>
